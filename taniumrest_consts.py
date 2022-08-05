@@ -41,11 +41,19 @@ TANIUMREST_NOT_ENOUGH_PARAMS = 'For parameters which you do not want to add valu
     'For more details refer to the documentation'
 TANIUMREST_RESOURCE_NOT_EXIST = "No {1} exists with name {0}. " \
     "Also, please verify that your account has sufficient permissions to access the {1}s"
+TANIUMREST_PARSE_ERR_MSG = "Unable to parse the error message. " \
+    "Please check the asset configuration and|or action parameters"
 
 # Constants relating to 'validate_integer'
 TANIUMREST_INVALID_INT_ERR_MSG = "Please provide a valid integer value in the {}"
 TANIUMREST_INVALID_NON_NEG_INT_ERR_MSG = "Please provide a valid non-negative integer value in the {}"
 TANIUMREST_INVALID_NON_NEG_NON_ZERO_ERR_MSG = "Please provide a valid non-zero non-negative integer value in the {}"
+TANIUMREST_CONNTIMEOUT_KEY = "'conntimeout' action parameter"
+TANIUMREST_PROCESS_TABLE_ID_KEY = "'process_table_id' action parameter"
+TANIUMREST_LIMIT_KEY = "'limit' action parameter"
+TANIUMREST_OFFSET_KEY = "'offset' action parameter"
+TANIUMREST_FILE_ID_KEY = "'file_id' action parameter"
+TANIUMREST_INTEL_DOC_ID_KEY = "'intel_doc_id' action parameter"
 TANIUMREST_EXPIRE_SECONDS_KEY = "'expire_seconds' action parameter"
 TANIUMREST_DISTRIBUTE_SECONDS_KEY = "'distribute_seconds' action parameter"
 TANIUMREST_ISSUE_SECONDS_KEY = "'issue_seconds' action parameter"
@@ -54,3 +62,8 @@ TANIUMREST_RETURN_WHEN_N_RESULTS_AVAILABLE_KEY = "'return_when_n_results_availab
 TANIUMREST_WAIT_FOR_N_RESULTS_AVAILABLE_KEY = "'wait_for_n_results_available' action parameter"
 TANIUMREST_RESULTS_PERCENTAGE_KEY = "'Consider question results complete at' configuration parameter"
 TANIUMREST_QUESTION_ID_KEY = "'question_id' action parameter"
+
+# Constants relating to value_list check
+TANIUMREST_DSTTYPE_VALUE_LIST = ["computer_name", "ip_address"]
+TANIUMREST_EVENT_TYPE_VALUE_LIST = ["combined", "dns", "driver", "file", "network", "process", "registry", "sid", "image"]
+TANIUMREST_FILTER_TYPE_VALUE_LIST = ["any", "all"]
