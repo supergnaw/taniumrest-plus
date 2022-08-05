@@ -49,7 +49,9 @@ class TaniumRestConnector(BaseConnector):
         self._password = None
         self._verify = None
         self._session_id = None
+        self._session_key = None
         self._percentage = None
+        self._python_version = None
 
     def _handle_py_ver_compat_for_input_str(self, input_str):
         """
