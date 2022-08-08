@@ -155,7 +155,7 @@ class TaniumRestConnector(BaseConnector):
         message = message.replace('{', '{{').replace('}', '}}')
 
         if len(message) > 500:
-            message = "Error while connecting to the server"
+            message = "Error while connecting to the server: message len > 500"
 
         return RetVal(action_result.set_status(phantom.APP_ERROR, message), None)
 
@@ -1216,6 +1216,7 @@ class TaniumRestConnector(BaseConnector):
 
         self.debug_print("action_id", self.get_action_identifier())
 
+        # Tanium API Default Actions
         if action_id == 'test_connectivity':
             ret_val = self._handle_test_connectivity(param)
 
@@ -1239,6 +1240,86 @@ class TaniumRestConnector(BaseConnector):
 
         elif action_id == 'parse_question':
             ret_val = self._handle_parse_question(param)
+
+        # Tanium Threat Response Actions
+        elif action_id == 'list_computers':
+            ret_val = self._handle_list_computers(param)
+
+        elif action_id == 'initialize_computers_list':
+            ret_val = self._handle_initialize_computers_list(param)
+
+        elif action_id == 'list_connections':
+            ret_val = self._handle_list_connections(param)
+
+        elif action_id == 'create_connection':
+            ret_val = self._handle_create_connection(param)
+
+        elif action_id == 'delete_connection':
+            ret_val = self._handle_delete_connection(param)
+
+        elif action_id == 'list_snapshots':
+            ret_val = self._handle_list_snapshots(param)
+
+        elif action_id == 'create_snapshot':
+            ret_val = self._handle_create_snapshot(param)
+
+        elif action_id == 'delete_snapshot':
+            ret_val = self._handle_delete_snapshot(param)
+
+        elif action_id == 'get_local_snapshot':
+            ret_val = self._handle_get_local_snapshot(param)
+
+        elif action_id == 'upload_local_snapshot':
+            ret_val = self._handle_upload_local_snapshot(param)
+
+        elif action_id == 'delete_local_snapshot':
+            ret_val = self._handle_delete_local_snapshot(param)
+
+        elif action_id == 'get_process':
+            ret_val = self._handle_get_process(param)
+
+        elif action_id == 'get_process_timeline':
+            ret_val = self._handle_get_process_timeline(param)
+
+        elif action_id == 'get_process_tree':
+            ret_val = self._handle_get_process_tree(param)
+
+        elif action_id == 'get_parent_process_tree':
+            ret_val = self._handle_get_parent_process_tree(param)
+
+        elif action_id == 'get_children_process_tree':
+            ret_val = self._handle_get_children_process_tree(param)
+
+        elif action_id == 'get_events':
+            ret_val = self._handle_get_events(param)
+
+        elif action_id == 'get_events_summary':
+            ret_val = self._handle_get_events_summary(param)
+
+        elif action_id == 'list_files':
+            ret_val = self._handle_list_files(param)
+
+        elif action_id == 'save_file':
+            ret_val = self._handle_save_file(param)
+
+        elif action_id == 'delete_file':
+            ret_val = self._handle_delete_file(param)
+
+        elif action_id == 'get_file':
+            ret_val = self._handle_get_file(param)
+
+        elif action_id == 'upload_intel_doc':
+            ret_val = self._handle_upload_intel_doc(param)
+
+        elif action_id == 'start_quick_scan':
+            ret_val = self._handle_start_quick_scan(param)
+
+        elif action_id == 'list_alerts':
+            ret_val = self._handle_list_alerts(param)
+
+        # Unsupported action
+        else:
+            ret_val = phantom.APP_ERROR
 
         return ret_val
 
