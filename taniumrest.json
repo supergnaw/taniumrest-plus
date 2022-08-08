@@ -1,5 +1,6 @@
 {
-    "appid": "3b878e99-4561-434c-8fd6-3e224334af6a",
+    "old_appid": "3b878e99-4561-434c-8fd6-3e224334af6a",
+    "app_id": "00000000-0000-0000-0000-0123456789ab",
     "name": "Tanium REST",
     "description": "This app supports investigative and generic actions on Tanium",
     "type": "endpoint",
